@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <!-- CLIENT TABLE -->
+    <changeSet logicalFilePath="create-tables"
+               id="create-tables-client" author="denis">
+        <createTable tableName="client">
+            <column name="id" type="serial">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lastname" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="age" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!-- GOOD TABLE -->
+    <changeSet logicalFilePath="create-tables"
+               id="create-tables-good" author="denis">
+        <createTable tableName="good">
+            <column name="id" type="serial">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="price" type="decimal">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!-- ORDER TABLE -->
+    <changeSet logicalFilePath="create-tables"
+               id="create-tables-order" author="denis">
+        <createTable tableName="order">
+            <column name="id" type="int">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="client_id" type="int">
+                <constraints nullable="false" foreignKeyName="fk_client_order" references="client(id)"/>
+            </column>
+            <column name="purchase_items" type="varchar (100) []"/>
+            <column name="count" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="amount" type="decimal">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date" type="date">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!-- M2M ORDER TO GOOD TABLE -->
+    <changeSet logicalFilePath="create-tables"
+               id="create-tables" author="denis">
+        <createTable tableName="m2m_order_good">
+            <column name="order_id" type="int">
+                <constraints nullable="false" foreignKeyName="fk_order_good" references="order(id)"/>
+            </column>
+            <column name="good_id" type="int">
+                <constraints nullable="false" foreignKeyName="fk_good_order" references="good(id)"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
