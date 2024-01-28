@@ -1,13 +1,18 @@
 package ru.multicard.mock.shop.controller.response;
 
+import java.time.LocalDate;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class ClientDto {
-    private String name;
-    private String lastname;
+public class PurchaseDto {
+	private String basket;
+	private int count;
+	private double amount;
+	private LocalDate date;
+	private String name;
 }

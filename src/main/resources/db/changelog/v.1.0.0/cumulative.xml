@@ -6,5 +6,8 @@
 
     <include file="create-tables.xml" relativeToChangelogFile="true" />
     <include file="insert-clients.xml" relativeToChangelogFile="true" />
+    <include file="insert-purchases.xml" relativeToChangelogFile="true" />
+    <include file="insert-goods.xml" relativeToChangelogFile="true" />
+    <include file="insert-purchase_goods.xml" relativeToChangelogFile="true" />
 
 </databaseChangeLog>

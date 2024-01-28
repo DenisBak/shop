@@ -1,5 +1,7 @@
 package ru.multicard.mock.shop.controller.response;
 
+import java.math.BigDecimal;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class ClientDto {
+public class GoodDto {
     private String name;
-    private String lastname;
+    private BigDecimal price;
 }

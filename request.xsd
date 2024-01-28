@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Define complex types -->
+    <xs:complexType name="ClientType">
+        <xs:sequence>
+            <xs:element name="firstName" type="xs:string"/>
+            <xs:element name="lastName" type="xs:string"/>
+            <xs:element name="age" type="xs:positiveInteger"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GoodsType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="OrderType">
+        <xs:sequence>
+            <xs:element name="client" type="ClientType"/>
+            <xs:element name="goodsList" type="GoodsType"/>
+            <xs:element name="purchaseItem" type="xs:string"/>
+            <xs:element name="orderDate" type="xs:date"/>
+            <xs:element name="count" type="xs:int"/>
+            <xs:element name="amount" type="xs:decimal"/>
+            <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

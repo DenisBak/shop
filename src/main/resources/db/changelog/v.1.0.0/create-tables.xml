@@ -4,11 +4,11 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <!-- CLIENT TABLE -->
+    <!-- CLIENTS TABLE -->
     <changeSet logicalFilePath="create-tables"
-               id="create-tables-client" author="denis">
-        <createTable tableName="client">
-            <column name="id" type="serial">
+               id="create-tables-clients" author="denis">
+        <createTable tableName="clients">
+            <column name="client_id" type="serial">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="name" type="varchar(100)">
@@ -23,11 +23,11 @@
         </createTable>
     </changeSet>
 
-    <!-- GOOD TABLE -->
+    <!-- GOODS TABLE -->
     <changeSet logicalFilePath="create-tables"
-               id="create-tables-good" author="denis">
-        <createTable tableName="good">
-            <column name="id" type="serial">
+               id="create-tables-goods" author="denis">
+        <createTable tableName="goods">
+            <column name="good_id" type="serial">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="name" type="varchar(100)">
@@ -39,17 +39,17 @@
         </createTable>
     </changeSet>
 
-    <!-- ORDER TABLE -->
+    <!-- PURCHASES TABLE -->
     <changeSet logicalFilePath="create-tables"
-               id="create-tables-order" author="denis">
-        <createTable tableName="order">
-            <column name="id" type="int">
+               id="create-tables-purchases" author="denis">
+        <createTable tableName="purchases">
+            <column name="purchase_id" type="serial">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="client_id" type="int">
-                <constraints nullable="false" foreignKeyName="fk_client_order" references="client(id)"/>
+                <constraints nullable="false" foreignKeyName="fk_clients_purchases" references="clients(client_id)"/>
             </column>
-            <column name="purchase_items" type="varchar (100) []"/>
+            <column name="purchase_items" type="varchar(100)"/>
             <column name="count" type="int">
                 <constraints nullable="false"/>
             </column>
@@ -59,21 +59,21 @@
             <column name="date" type="date">
                 <constraints nullable="false"/>
             </column>
+            <column name="name" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
     </changeSet>
 
-    <!-- M2M ORDER TO GOOD TABLE -->
+    <!-- M2M PURCHASES TO GOODS TABLE -->
     <changeSet logicalFilePath="create-tables"
                id="create-tables" author="denis">
-        <createTable tableName="m2m_order_good">
-            <column name="order_id" type="int">
-                <constraints nullable="false" foreignKeyName="fk_order_good" references="order(id)"/>
+        <createTable tableName="purchase_goods">
+            <column name="purchase_id" type="int">
+                <constraints nullable="false" foreignKeyName="fk_m2m_purchases_goods" references="purchases(purchase_id)"/>
             </column>
             <column name="good_id" type="int">
-                <constraints nullable="false" foreignKeyName="fk_good_order" references="good(id)"/>
-            </column>
-            <column name="name" type="varchar(100)">
-                <constraints nullable="false"/>
+                <constraints nullable="false" foreignKeyName="fk_m2m_goods_purchases" references="goods(good_id)"/>
             </column>
         </createTable>
     </changeSet>

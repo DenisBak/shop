@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="now" value="now()" dbms="postgresql"/>
+
+    <changeSet logicalFilePath="insert-purchases.xml"
+               id="insert-purchases.xml" author="denis">
+        <insert tableName="purchases">
+            <column name="client_id" value="1"/>
+            <column name="purchase_items" value="TV, Phone, Headphones"/>
+            <column name="count" value="3"/>
+            <column name="amount" value="175.47"/>
+            <column name="date" value="${now}"/>
+            <column name="name" value="Today shopping"/>
+        </insert>
+        <insert tableName="purchases">
+            <column name="client_id" value="2"/>
+            <column name="purchase_items" value="Phone"/>
+            <column name="count" value="1"/>
+            <column name="amount" value="49.99"/>
+            <column name="date" value="2024-01-12"/>
+            <column name="name" value="Two week ago"/>
+        </insert>
+        <insert tableName="purchases">
+            <column name="client_id" value="3"/>
+            <column name="purchase_items" value="Headphones, Headphones, Headphones, Headphones, Headphones"/>
+            <column name="count" value="5"/>
+            <column name="amount" value="47.99"/>
+            <column name="date" value="2024-01-01"/>
+            <column name="name" value="One year ago"/>
+        </insert>
+        <insert tableName="purchases">
+            <column name="client_id" value="2"/>
+            <column name="purchase_items" value="Keyboard, Keyboard, Juice machine"/>
+            <column name="count" value="3"/>
+            <column name="amount" value="129.99"/>
+            <column name="date" value="2022-01-01"/>
+            <column name="name" value="Teenager shopping"/>
+        </insert>
+        <insert tableName="purchases">
+            <column name="client_id" value="1"/>
+            <column name="purchase_items" value="Phone, Keyboard, Juice machine"/>
+            <column name="count" value="3"/>
+            <column name="amount" value="149.99"/>
+            <column name="date" value="2024-01-27"/>
+            <column name="name" value="Bro shopping"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

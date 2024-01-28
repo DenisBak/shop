@@ -1,19 +1,19 @@
 package ru.multicard.mock.shop.db.entities;
 
+import javax.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "client")
+@Table(name = "clients")
 public class ClientEntity {
     @Id
-    @Column(name = "id")
+    @Column(name = "client_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 

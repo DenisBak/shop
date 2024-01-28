@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet logicalFilePath="insert-goods.xml"
+               id="insert-goods.xml" author="denis">
+        <insert tableName="goods">
+            <column name="name" value="TV"/>
+            <column name="price" value="99.99"/>
+        </insert>
+        <insert tableName="goods">
+            <column name="name" value="Phone"/>
+            <column name="price" value="49.99"/>
+        </insert>
+        <insert tableName="goods">
+            <column name="name" value="Headphones"/>
+            <column name="price" value="9.99"/>
+        </insert>
+        <insert tableName="goods">
+            <column name="name" value="Juice machine"/>
+            <column name="price" value="29.99"/>
+        </insert>
+        <insert tableName="goods">
+            <column name="name" value="Keyboard"/>
+            <column name="price" value="13.99"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
