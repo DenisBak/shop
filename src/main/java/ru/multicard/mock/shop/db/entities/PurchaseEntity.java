@@ -1,6 +1,8 @@
 package ru.multicard.mock.shop.db.entities;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -37,4 +39,10 @@ public class PurchaseEntity {
 
     @Column(name = "name")
     private String name;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "purchase_goods",
+            joinColumns = { @JoinColumn(name = "purchase_id") },
+            inverseJoinColumns = { @JoinColumn(name = "good_id") })
+    private List<GoodEntity> purchases = new ArrayList<>();
 }

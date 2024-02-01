@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clients</title>
+    <script type="text/javascript" src="../purchases.js"></script>
+</head>
+<body>
+<h1>Create purchase:</h1>
+<form id="createPurchase">
+    <div>
+        <p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+        <label for="basket">I want to buy:</label>
+        <select id="basket" name="basket" size="3" multiple></select>
+    </div>
+
+    <div>
+        <label for="clientName">My name is:</label>
+        <select id="clientName" name="clientName" size="3"></select>
+    </div>
+
+    <div>
+        <label for="name">Enter purchase name:</label>
+        <input type="text" id="name" name="name" value="Name" />
+    </div>
+    <input type="submit" value="Submit"/>
+</form>
+<p id="response"></p>
+
+<script type="text/javascript">
+    initFormFields()
+    addEventListener()
+</script>
+</body>
+</html>

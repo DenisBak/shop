@@ -2,16 +2,25 @@ package ru.multicard.mock.shop.service;
 
 import java.util.List;
 
-import ru.multicard.mock.shop.controller.response.ClientDto;
-import ru.multicard.mock.shop.controller.response.GoodDto;
-import ru.multicard.mock.shop.controller.response.PurchaseDto;
+import ru.multicard.mock.shop.controller.request.CreatePurchaseRequestDto;
+import ru.multicard.mock.shop.controller.response.ClientResponseDto;
+import ru.multicard.mock.shop.controller.response.GoodResponseDto;
+import ru.multicard.mock.shop.controller.response.PurchaseResponseDto;
 
 public interface ShopService {
-    List<PurchaseDto> getLastWeekPurchases();
+    List<PurchaseResponseDto> getLastWeekPurchases();
 
-    GoodDto getLastMonthMostPopularGood();
+    GoodResponseDto getLastMonthMostPopularGood();
 
-    ClientDto getHalfYearBestBuyer();
+    ClientResponseDto getHalfYearBestBuyer();
 
-    GoodDto mostSellGoodAmongEighteen();
+    GoodResponseDto mostSellGoodAmongEighteen();
+
+    PurchaseResponseDto createPurchase(CreatePurchaseRequestDto purchaseReq);
+
+    List<PurchaseResponseDto> getAllPurchases();
+
+    List<GoodResponseDto> getAllGoods();
+
+    List<ClientResponseDto> getAllClients();
 }
