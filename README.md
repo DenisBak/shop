@@ -9,10 +9,12 @@
        
 2. **Я запустил, что дальше?**
      - Навигация по сервису:
-       - [Список покупок за последнюю неделю](http://localhost:8181/weekly/purchase)
-       - [Самый покупаемый товар за последний месяц](http://localhost:8181/monthly/good/best)
-       - [Имя и фамилия человека, совершившего больше всего покупок за полгода](http://localhost:8181/halfyearly/buyer/best)
-       - [Что чаще всего покупают люди в возрасте 18 лет](http://localhost:8181/good/eighteen/best)
+       - [Домашняя страница, все покупки](http://localhost:8181/index.html)
+       - [Список покупок за последнюю неделю](http://localhost:8181/purchases/weekly/info.html)
+       - [Самый покупаемый товар за последний месяц](http://localhost:8181/goods/monthly/best/info.html)
+       - [Создать покупку](http://localhost:8181/purchases/create/info.html)
+       - [Имя и фамилия человека, совершившего больше всего покупок за полгода](http://localhost:8181/clients/halfyearly/best/info.html)
+       - [Что чаще всего покупают люди в возрасте 18 лет](http://localhost:8181/goods/eighteen/best/info.html)
      - Дополнительно:
        -  [PgAdmin](http://localhost:5050)
        -  [Прямая сслыка на бд](http://localhost:15432/shop_db)
