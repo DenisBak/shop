@@ -20,6 +20,9 @@
        -  [Прямая сслыка на бд](http://localhost:15432/shop_db)
        -  [Ссылка на xsd-request](https://github.com/DenisBak/shop/blob/main/request.xsd)
 
+3. **Проблемы?**
+   - Если неполадки с liquibase локами, попробуй снести две таблицы с лог и лок
+
 > [!CAUTION]
 > ПАРОЛИ 🔐
 > - Authorization
